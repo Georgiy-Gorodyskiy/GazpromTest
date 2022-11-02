@@ -37,7 +37,6 @@ namespace GazpromTest.Models
                 if (fileName.EndsWith("csv"))
                 {
                     newData = ParceCSV(fileName);
-                    return;
                 }
                 else
                 {
@@ -86,7 +85,7 @@ namespace GazpromTest.Models
             {
                 columnNames.Add(lines[0][i].ToLower());
             }
-            for (int i = 1; i <= lines.Count; i++)
+            for (int i = 1; i < lines.Count; i++)
             {
                 var info = new ObjectInfo();
                 for (int j = 0; j < lines[i].Count; j++)
