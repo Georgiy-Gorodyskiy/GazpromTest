@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GazpromTest", "GazpromTest\GazpromTest.csproj", "{D43F33A0-9338-4B1E-BB1E-226569452C3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GazpromTestModels", "GazpromTestModels\GazpromTestModels.csproj", "{4CA218CC-3DA4-4C9A-A7CB-FE966305398C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D43F33A0-9338-4B1E-BB1E-226569452C3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D43F33A0-9338-4B1E-BB1E-226569452C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D43F33A0-9338-4B1E-BB1E-226569452C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D43F33A0-9338-4B1E-BB1E-226569452C3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA218CC-3DA4-4C9A-A7CB-FE966305398C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA218CC-3DA4-4C9A-A7CB-FE966305398C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA218CC-3DA4-4C9A-A7CB-FE966305398C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA218CC-3DA4-4C9A-A7CB-FE966305398C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF8E09F5-B545-4F21-B21C-94CF87EED5F5}
+	EndGlobalSection
+EndGlobal
