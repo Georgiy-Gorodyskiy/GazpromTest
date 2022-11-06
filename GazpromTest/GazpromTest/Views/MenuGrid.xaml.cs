@@ -23,7 +23,7 @@ namespace GazpromTest.Views
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm;*.xlss;*.csv";
                 if (openFileDialog.ShowDialog() == true)
-                    ExcelService.ReadFile(openFileDialog.FileName);
+                    ServiceManager.ExcelService.ReadFile(openFileDialog.FileName);
             }
             catch (Exception ex)
             {
@@ -38,7 +38,7 @@ namespace GazpromTest.Views
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm;*.xlss;";
                 if (saveFileDialog.ShowDialog() == true)
-                    ExcelService.SaveFile(saveFileDialog.FileName);
+                    ServiceManager.ExcelService.SaveFile(saveFileDialog.FileName);
             }
             catch(Exception ex)
             {
@@ -48,7 +48,7 @@ namespace GazpromTest.Views
 
         private void CloseFileButton_Click(object sender, RoutedEventArgs e)
         {
-            ExcelService.CloseFile();
+            ServiceManager.ExcelService.CloseFile();
         }
     }
 }

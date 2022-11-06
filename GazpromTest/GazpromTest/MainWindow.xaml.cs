@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using GazpromTest.Models;
+using System.Windows;
 
 namespace GazpromTest
 {
@@ -9,6 +10,7 @@ namespace GazpromTest
     {
         public MainWindow()
         {
+            ServiceManager.Init();
             InitializeComponent();
         }
     }

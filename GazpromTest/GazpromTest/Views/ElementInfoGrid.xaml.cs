@@ -15,8 +15,8 @@ namespace GazpromTest.Views
         public ElementInfoGrid()
         {
             InitializeComponent();
-            ExcelService.CurentInfoChanged += ExcelService_CurentInfoChanged;
-            ExcelService.DataChanged += ExcelService_DataChanged;
+            ServiceManager.ExcelService.CurentInfoChanged += ExcelService_CurentInfoChanged;
+            ServiceManager.ExcelService.DataChanged += ExcelService_DataChanged;
         }
 
         private void ExcelService_DataChanged(object? sender, EventArgs e)

@@ -10,14 +10,14 @@ using System.Linq;
 
 namespace GazpromTest.Models
 {
-    public static class ExcelService
+    public class ExcelService
     {
-        public static List<ObjectInfo> Data { get; private set; } = new List<ObjectInfo>();
+        public List<ObjectInfo> Data { get; private set; } = new List<ObjectInfo>();
 
-        public static event EventHandler DataChanged;
-        public static event EventHandler<CurentInfoChangedEventArgs> CurentInfoChanged;
+        public event EventHandler DataChanged;
+        public event EventHandler<CurentInfoChangedEventArgs> CurentInfoChanged;
 
-        public static void ChangeCurentInfo(ObjectInfo info)
+        public void ChangeCurentInfo(ObjectInfo info)
         {
             try
             {
@@ -29,12 +29,12 @@ namespace GazpromTest.Models
             }
         }
 
-        public static void ReadFile(string fileName)
+        public void ReadFile(string fileName)
         {
             try
             {
                 List<ObjectInfo> newData = new List<ObjectInfo>();
-                if (fileName.EndsWith("csv"))
+                if (fileName.EndsWith(".csv"))
                 {
                     newData = ParceCSV(fileName);
                 }
@@ -53,7 +53,7 @@ namespace GazpromTest.Models
             }
         }
 
-        private static List<ObjectInfo> ParceCSV(string fileName)
+        private List<ObjectInfo> ParceCSV(string fileName)
         {
             List<ObjectInfo> newData = new List<ObjectInfo>();
 
@@ -127,7 +127,7 @@ namespace GazpromTest.Models
             return newData;
         }
 
-        private static List<ObjectInfo> ParceExcel(string fileName)
+        private List<ObjectInfo> ParceExcel(string fileName)
         {
             List<ObjectInfo> newData = new List<ObjectInfo>();
             IWorkbook workbook;
@@ -187,7 +187,7 @@ namespace GazpromTest.Models
             return newData;
         }
 
-        public static void SaveFile(string fileName)
+        public void SaveFile(string fileName)
         {
             try
             {
@@ -251,7 +251,7 @@ namespace GazpromTest.Models
             }
         }
 
-        private static string ToXLSX(string fileName)
+        private string ToXLSX(string fileName)
         {
             if (fileName.ToLower().EndsWith(".xlsx"))
             {
@@ -262,7 +262,7 @@ namespace GazpromTest.Models
             return fileName + ".xlsx";
         }
 
-        public static void CloseFile()
+        public void CloseFile()
         {
             try
             {
@@ -275,13 +275,13 @@ namespace GazpromTest.Models
             }
         }
 
-        private static string GetSheetName(string fileName)
+        private string GetSheetName(string fileName)
         {
             var tmp = fileName.Split("\\").LastOrDefault().Split('.');
             return tmp[0];
         }
 
-        private static bool ParceBool(string isDefect)
+        private bool ParceBool(string isDefect)
         {
             if(isDefect.ToLower() == "yes")
                 return true;
@@ -290,7 +290,7 @@ namespace GazpromTest.Models
             throw new Exception("Wrong IsDefectValue: " + isDefect);
         }
 
-        private static string GetColumnName(ColumnNamesEnum name)
+        private string GetColumnName(ColumnNamesEnum name)
         {
             return name.ToString().ToLower();
         }

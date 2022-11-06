@@ -17,8 +17,8 @@ namespace GazpromTest.Views
         public TableGrid()
         {
             InitializeComponent();
-            ExcelService.DataChanged += ExcelService_DataChanged;
-            DataGrid.ItemsSource = ExcelService.Data;
+            ServiceManager.ExcelService.DataChanged += ExcelService_DataChanged;
+            DataGrid.ItemsSource = ServiceManager.ExcelService.Data;
         }
 
         private void ExcelService_DataChanged(object? sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace GazpromTest.Views
             try
             {
                 DataGrid.ItemsSource = null;
-                DataGrid.ItemsSource = ExcelService.Data;
+                DataGrid.ItemsSource = ServiceManager.ExcelService.Data;
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace GazpromTest.Views
             {
                 if (e.AddedItems.Count > 0)
                 {
-                    ExcelService.ChangeCurentInfo(e.AddedItems[0] as ObjectInfo);
+                    ServiceManager.ExcelService.ChangeCurentInfo(e.AddedItems[0] as ObjectInfo);
                 }
             }
             catch (Exception ex)
